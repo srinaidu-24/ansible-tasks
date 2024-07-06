@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: i want to install java on node
+    apt:
+      name: default-jdk
+      state: present
