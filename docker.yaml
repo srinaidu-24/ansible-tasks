@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: want to install docker on this node
+    apt:
+      name: docker.io
+      state: present
+  - name: enable docker service
+    systemd:
+      name: docker
+      enabled: yes
+  - name: start the docker service
+    systemd:
+      name: docker
+      state: started
